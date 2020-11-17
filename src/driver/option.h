@@ -124,11 +124,11 @@ public:
         _emit_llvm = true;
         continue;
       }
-      if (strncmp(argv[index], "-??", ARG_MAX_LENGTH) == 0) { // FIXME: ??
+      if (strncmp(argv[index], "-??", ARG_MAX_LENGTH) == 0) { // TODO: ??
         m_goal = Goal::OPT_IR;
         continue;
       }
-      if (strncmp(argv[index], "-???", ARG_MAX_LENGTH) == 0) { // FIXME: ???
+      if (strncmp(argv[index], "-???", ARG_MAX_LENGTH) == 0) { // TODO: ???
         m_goal = Goal::OPT_BC;
         continue;
       }
