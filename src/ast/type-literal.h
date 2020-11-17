@@ -61,6 +61,7 @@ public:
       case TypeTag::F64: return "f64";
       case TypeTag::STR: return "str";
     }
+    return std::string();
   }
   
 private:

@@ -19,7 +19,7 @@
 // really ugly implement! Shit
 #ifndef __FLEX_LEXER_H
 #define yyFlexLexer yyFlexLexer
-#include <FlexLexer.h>
+#include "FlexLexer.h"
 #undef yyFlexLexer
 #endif
 
