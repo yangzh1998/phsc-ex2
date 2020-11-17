@@ -25,7 +25,7 @@
 #include "../parser/parser.hpp"
 #include "../visitor/build-sym.h"
 #include "../visitor/type-check.h"
-#include "../opt/llvm-opt.h"
+//#include "../opt/llvm-opt.h"
 
 #ifndef PHSC_LITE
 #include "../utils/indent-print-writer.h"

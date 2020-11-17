@@ -1,6 +1,7 @@
 cmake_minimum_required (VERSION 2.8)
 project(phsc)
 
+find_package(FLEX REQUIRED)
 
 find_package(LLVM REQUIRED CONFIG)
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
@@ -17,7 +18,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions -fno-rtti")
 
 add_executable(phsc 
     src/driver/phsc.cpp 
-    src/opt/llvm-opt.cpp
+    #src/opt/llvm-opt.cpp
     src/parser/parser.cpp
     src/parser/lexer.cpp
     src/symbol/scope.cpp
