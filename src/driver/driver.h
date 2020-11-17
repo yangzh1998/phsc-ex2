@@ -53,7 +53,7 @@ public:
     phsc::location loc;
     _tree.reset(new phsc::ASTRoot(loc, defs));
     _checkErrors();
-    if (ret != 0) return;
+    //if (ret != 0) return;
 #ifndef PHSC_LITE
     if (_option.m_goal == Option::Goal::AST) {
       phsc::PrintAST printer(_option.m_ofs);
