@@ -1,0 +1,11 @@
+/build/
+/doc/
+/test-cases/
+/src/parser/parser.cpp
+/src/parser/parser.hpp
+/src/parser/lexer.cpp
+/src/parser/position.hh
+/src/parser/stack.hh
+/src/parser/location.hh
+*/.DS_Store
+.DS_Store
