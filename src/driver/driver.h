@@ -103,7 +103,7 @@ private:
   std::unique_ptr<phsc::BuildSym> _buildSym;
   std::unique_ptr<phsc::TypeCheck> _typeCheck;
   
-  phsc::LLVMOpt _llvmOpt;
+  //phsc::LLVMOpt _llvmOpt;
   
 private:
   void _checkErrors() {
