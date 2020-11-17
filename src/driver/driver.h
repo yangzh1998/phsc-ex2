@@ -21,8 +21,9 @@
 #include <algorithm> // sort
 #include "option.h"
 #include "../report/hamsic-report.h"
-#include "../parser/hamsic-lexer.h"
-#include "../parser/parser.hpp"
+#include "../ast/includes.h"
+//#include "../parser/hamsic-lexer.h"
+//#include "../parser/parser.hpp"
 #include "../visitor/build-sym.h"
 #include "../visitor/type-check.h"
 //#include "../opt/llvm-opt.h"
@@ -41,13 +42,16 @@ public:
   
   void run(int argc, const char** argv) {
     if (_option.parseArg(argc, argv) != 0) return;
-    _lexer.reset(new phsc::HamsicLexer(_errors, _warnings, _option,
-                                       &(_option.m_ifs)));
-    _parser.reset(new phsc::HamsicParser(*_lexer, _tree, _errors));
-    
-    int ret = _parser->parse(); // _tree constructed here
-    _parser.reset();
-    _lexer.reset();
+//    _lexer.reset(new phsc::HamsicLexer(_errors, _warnings, _option,
+//                                       &(_option.m_ifs)));
+//    _parser.reset(new phsc::HamsicParser(*_lexer, _tree, _errors));
+//
+//    int ret = _parser->parse(); // _tree constructed here
+//    _parser.reset();
+//    _lexer.reset();
+    std::vector<std::unique_ptr<phsc::ASTNode>> defs;
+    phsc::location loc;
+    _tree.reset(new phsc::ASTRoot(loc, defs));
     _checkErrors();
     if (ret != 0) return;
 #ifndef PHSC_LITE
@@ -97,8 +101,8 @@ private:
   std::vector<std::unique_ptr<phsc::HamsicWarning>> _warnings;
   
   std::unique_ptr<phsc::ASTRoot> _tree;
-  std::unique_ptr<phsc::HamsicLexer> _lexer;
-  std::unique_ptr<phsc::HamsicParser> _parser;
+//  std::unique_ptr<phsc::HamsicLexer> _lexer;
+//  std::unique_ptr<phsc::HamsicParser> _parser;
   
   std::unique_ptr<phsc::BuildSym> _buildSym;
   std::unique_ptr<phsc::TypeCheck> _typeCheck;
